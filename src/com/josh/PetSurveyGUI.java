@@ -16,6 +16,7 @@ public class PetSurveyGUI  extends JFrame {
     private JCheckBox fishCheckBox;
     private JButton submitButton;
     private JLabel surveyResultsLabel;
+    private JButton quitButton;
     private boolean hasDogs;
     private boolean hasCats;
     private boolean hasFish;
@@ -71,6 +72,12 @@ public class PetSurveyGUI  extends JFrame {
 
                 String surveyResults = "User has " + dog + "and " + cat + " and " + fish;
                 surveyResultsLabel.setText(surveyResults);
+            }
+        });
+        quitButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.exit(0);
             }
         });
     }
