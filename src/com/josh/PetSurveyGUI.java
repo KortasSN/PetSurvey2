@@ -15,6 +15,7 @@ public class PetSurveyGUI  extends JFrame {
     private JCheckBox catCheckBox;
     private JCheckBox fishCheckBox;
     private JButton submitButton;
+    private JLabel surveyResultsLabel;
     private boolean hasDogs;
     private boolean hasCats;
     private boolean hasFish;
@@ -60,6 +61,17 @@ public class PetSurveyGUI  extends JFrame {
                 String cat = (hasCats) ? "one cat" : "no cats";
                 String fish = (hasFish) ? "one fish" : "no fish";
                             }
+        });
+        submitButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String dog = (hasDogs) ? "a dog" : "no dogs";
+                String cat = (hasCats) ? "a cat" : "no cats";
+                String fish = (hasFish) ? "a fish" : "no fish";
+
+                String surveyResults = "User has " + dog + "and " + cat + " and " + fish;
+                surveyResultsLabel.setText(surveyResults);
+            }
         });
     }
 }
